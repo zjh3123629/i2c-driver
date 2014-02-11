@@ -38,7 +38,7 @@ static void __exit at24cxx_i2c_exit(void)
 module_exit(at24cxx_i2c_exit);
 
 
-MODULE_DESCRIPTION("I2C Driver for AT24CXX");
+MODULE_DESCRIPTION("I2C Device for AT24CXX");
 MODULE_AUTHOR("zjh <zjh3123629@163.com>");
 MODULE_LICENSE("GPL");
 
