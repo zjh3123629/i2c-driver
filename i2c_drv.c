@@ -53,7 +53,7 @@ static int at24cxx_probe(struct i2c_client *client,
 	printk("zjh: %s\n", __func__);
 
 	/* create miscdevice */
-	if (!misc_register(&at24xx_miscdev)) {
+	if (misc_register(&at24xx_miscdev)) {
 		printk("cannot register miscdev\n");
 		goto err_misc_register;
 	}
@@ -68,7 +68,7 @@ static int at24cxx_remove(struct i2c_client *client)
 {
 	printk("zjh: %s\n", __func__);
 
-	if (!misc_deregister(&at24xx_miscdev)) {
+	if (misc_deregister(&at24xx_miscdev)) {
 		printk("cannot deregister miscdev\n");
 		goto err_misc_deregister;
 	}
